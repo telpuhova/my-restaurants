@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://C:\Users\boop442\workspace\my-restaurants\MyRestaurants.iml" filepath="C:\Users\boop442\workspace\my-restaurants\MyRestaurants.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Users\boop442\workspace\my-restaurants\app\app.iml" filepath="C:\Users\boop442\workspace\my-restaurants\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/my-restaurants.iml" filepath="$PROJECT_DIR$/my-restaurants.iml" />
     </modules>
   </component>
