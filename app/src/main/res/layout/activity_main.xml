@@ -43,6 +43,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:padding="5dp"
-        android:hint="Enter Zip Code" />
+        android:hint="Enter Zip Code"
+        android:text="97124"/>
 
 </RelativeLayout>
