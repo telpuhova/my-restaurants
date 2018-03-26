@@ -52,13 +52,15 @@ public class RestaurantsActivity extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mRecentAddress = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        Log.d("SHARED PREF LOCATION", mRecentAddress);
+//        Log.d("SHARED PREF LOCATION", mRecentAddress);
 
+        if (mRecentAddress != null) {
+            getRestaurants(mRecentAddress);
+        }
 
-        Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
-
-        getRestaurants(location);
+//        Intent intent = getIntent();
+//        String location = intent.getStringExtra("location");
+//        getRestaurants(location);
     }
 
     private void getRestaurants(String location) {

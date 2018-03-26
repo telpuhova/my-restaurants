@@ -34,10 +34,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String location = mLocationEditText.getText().toString();
             Log.d(TAG, location);
 
-            addToSharedPreferences(location);
+            if (!(location.equals(""))) {
+                addToSharedPreferences(location);
+            }
 
             Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
-            intent.putExtra("location", location);
+//            intent.putExtra("location", location);
             startActivity(intent);
             //a new Intent that takes the user from the MainActivity to the RestaurantsActivity will be created and immediately started.
         }
