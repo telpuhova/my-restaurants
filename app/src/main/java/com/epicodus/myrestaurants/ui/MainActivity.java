@@ -12,18 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.*;
-
-//import com.google.firebase.database.DataSnapshot;
-//import com.google.firebase.database.DatabaseError;
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
-//import com.google.firebase.database.ValueEventListener;
-//import com.google.firebase.quickstart.database.models.Post;
-//import com.google.firebase.quickstart.database.models.User;
-
 import com.epicodus.myrestaurants.Constants;
 import com.epicodus.myrestaurants.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 
             Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
-//            intent.putExtra("location", location);
+            intent.putExtra("location", location);
             startActivity(intent);
             //a new Intent that takes the user from the MainActivity to the RestaurantsActivity will be created and immediately started.
         }
@@ -64,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    }
 
     private void saveLocationToFirebase(String location) {
-        mSearchedLocationReference.setValue(location);
+        mSearchedLocationReference.push().setValue(location);
     }
 
     @Override
