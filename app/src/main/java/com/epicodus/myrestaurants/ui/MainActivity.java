@@ -1,9 +1,7 @@
 package com.epicodus.myrestaurants.ui;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Typeface;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,10 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                addToSharedPreferences(location);
 //            }
 
-            Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
+            Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
             intent.putExtra("location", location);
             startActivity(intent);
-            //a new Intent that takes the user from the MainActivity to the RestaurantsActivity will be created and immediately started.
+            //a new Intent that takes the user from the MainActivity to the RestaurantListActivity will be created and immediately started.
         }
     }
 
