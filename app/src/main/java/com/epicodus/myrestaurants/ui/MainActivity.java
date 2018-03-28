@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
     @BindView(R.id.locationEditText) EditText mLocationEditText;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
+    @BindView(R.id.savedRestaurantsButton) Button mSavedRestaurantsButton;
 
     @Override
     public void onClick(View v) {
@@ -50,6 +51,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             intent.putExtra("location", location);
             startActivity(intent);
             //a new Intent that takes the user from the MainActivity to the RestaurantListActivity will be created and immediately started.
+        }
+        if (v == mSavedRestaurantsButton) {
+            Intent intent = new Intent(MainActivity.this, SavedRestaurantListActivity.class);
+            startActivity(intent);
         }
     }
 
@@ -96,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAppNameTextView.setTypeface(ostrichFont);
 
         mFindRestaurantsButton.setOnClickListener(this);
+        mSavedRestaurantsButton.setOnClickListener(this);
     }
 
     @Override
