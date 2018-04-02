@@ -88,7 +88,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         String password = mPasswordEditText.getText().toString().trim();
         String confirmPassword = mConfirmPasswordEditText.getText().toString().trim();
 
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        OnCompleteListener comlpleteListener = new OnCompleteListener<AuthResult>() {
 
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -104,7 +104,9 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
             }
 
-        });
+        };
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, comlpleteListener);
     }
 
     private void createAuthStateListener() {

@@ -44,7 +44,7 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
         TextView categoryTextView = (TextView) mView.findViewById(R.id.categoryTextView);
         TextView ratingTextView = (TextView) mView.findViewById(R.id.ratingTextView);
 
-        Picasso.with(mContext)
+        Picasso.get()
                 .load(restaurant.getImageUrl())
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
