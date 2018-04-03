@@ -96,7 +96,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         mAuthProgressDialog.show();
-        
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
