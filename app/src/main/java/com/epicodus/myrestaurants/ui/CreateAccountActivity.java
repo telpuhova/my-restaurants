@@ -130,7 +130,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, comlpleteListener);
     }
 
-    
+
     private void createAuthStateListener() {
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
