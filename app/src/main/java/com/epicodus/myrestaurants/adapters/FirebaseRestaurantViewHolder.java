@@ -28,6 +28,8 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
 
+    private ArrayList<Restaurant> restaurants = new ArrayList<>();
+
     View mView;
     Context mContext;
 
@@ -57,10 +59,13 @@ public class FirebaseRestaurantViewHolder extends RecyclerView.ViewHolder implem
 
     @Override
     public void onClick(View view) {
+        final ArrayList<Restaurant> restaurants = new ArrayList<>();
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RESTAURANTS);
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
-        final ArrayList<Restaurant> restaurants = new ArrayList<>();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RESTAURANTS);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_RESTAURANTS).child(uid);
+
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
